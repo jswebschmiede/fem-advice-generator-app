@@ -12,14 +12,17 @@ module.exports = {
     },
     container: {
       center: true,
+      padding: {
+        DEFAULT: "1rem",
+      },
     },
     extend: {
       colors: {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
-        "neutral-gray-blue": "var(--neutral-gray-blue)",
-        "neutral-dark-gray-blue": "var(--neutral-dark-gray-blue)",
-        "neutral-dark-blue": "var(--neutral-dark-blue)",
+        "gray-blue": "var(--color-gray-blue)",
+        "dark-gray-blue": "var(--color-dark-gray-blue)",
+        "dark-blue": "var(--color-dark-blue)",
       },
       fontFamily: {
         sans: ["Manrope, sans-serif"],
