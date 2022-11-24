@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  --color-primary: 255 115 179;
-  --color-secondary: 111 114 185;
+  :root {
+    --primary: hsl(193, 38%, 86%);
+    --secondary: hsl(150, 100%, 66%);
+    --neutral-gray-blue: hsl(217, 19%, 38%);
+    --neutral-dark-gray-blue: hsl(217, 19%, 24%);
+    --neutral-dark-blue: hsl(218, 23%, 16%);
+  }
 }

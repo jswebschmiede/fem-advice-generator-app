@@ -15,8 +15,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "hsl(var(--color-primary) / <alpha-value>)",
-        secondary: "hsl(var(--color-secondary) / <alpha-value>)",
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        "neutral-gray-blue": "var(--neutral-gray-blue)",
+        "neutral-dark-gray-blue": "var(--neutral-dark-gray-blue)",
+        "neutral-dark-blue": "var(--neutral-dark-blue)",
       },
       fontFamily: {
         sans: ["Manrope, sans-serif"],
