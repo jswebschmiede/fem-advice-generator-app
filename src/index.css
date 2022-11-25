@@ -12,6 +12,6 @@
   }
 
   body {
-    @apply min-h-full overflow-x-hidden bg-dark-gray-blue text-primary;
+    @apply min-h-full overflow-x-hidden bg-dark-blue text-primary;
   }
 }

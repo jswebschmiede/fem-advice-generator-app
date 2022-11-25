@@ -60,14 +60,14 @@ const Advice = () => {
       </div>
       <div className="relative py-11" aria-hidden="true">
         <div className="h-[0.025rem] bg-primary opacity-40"></div>
-        <div className="absolute top-5 left-0 right-0 m-auto flex h-12 w-16 items-center justify-center gap-2 bg-gray-blue">
+        <div className="absolute top-5 left-0 right-0 m-auto flex h-12 w-16 items-center justify-center gap-2 bg-dark-gray-blue">
           <span className="h-6 w-2 rounded-lg bg-primary"></span>
           <span className="h-6 w-2 rounded-lg bg-primary"></span>
         </div>
       </div>
       <button
         className={`absolute left-0 right-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-dark-blue transition duration-300
-hover:shadow-[0px_0px_40px_10px_rgba(82,255,169,0.55)]`}
+hover:shadow-[0_0_2rem_rgba(82,255,169,0.55)]`}
         onClick={getAdviceHandler}
         aria-label="get random advice"
       >
