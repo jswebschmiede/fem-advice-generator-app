@@ -54,7 +54,7 @@ const Advice = () => {
             >
               Advice #{advice.id}
             </h1>
-            <p>{advice.advice}</p>
+            <blockquote>"{advice.advice}"</blockquote>
           </>
         )}
       </div>
