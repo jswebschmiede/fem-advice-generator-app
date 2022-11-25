@@ -48,10 +48,7 @@ const Advice = () => {
           </span>
         ) : (
           <>
-            <h1
-              role="banner"
-              className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary"
-            >
+            <h1 className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary">
               Advice #{advice.id}
             </h1>
             <blockquote>"{advice.advice}"</blockquote>
