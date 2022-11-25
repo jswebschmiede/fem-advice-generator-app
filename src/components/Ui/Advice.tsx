@@ -44,16 +44,16 @@ const Advice = () => {
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
       <div>
-        <h1 className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary">
-          Advice #{advice.id}
-        </h1>
-        <p>
-          {loading ? (
-            <span className="animate-bounce">loading...</span>
-          ) : (
-            advice.advice
-          )}
-        </p>
+        {loading ? (
+          <span className="animate-bounce">loading...</span>
+        ) : (
+          <>
+            <h1 className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary">
+              Advice #{advice.id}
+            </h1>
+            <p>advice.advice</p>
+          </>
+        )}
       </div>
       <div className="relative py-11" aria-hidden="true">
         <div className="h-[0.025rem] bg-primary opacity-40"></div>
