@@ -45,13 +45,15 @@ const Advice = () => {
       )}
       <div>
         {loading ? (
-          <span className="animate-bounce">loading...</span>
+          <span className="flex h-20 items-center justify-center text-center">
+            loading...
+          </span>
         ) : (
           <>
             <h1 className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary">
               Advice #{advice.id}
             </h1>
-            <p>advice.advice</p>
+            <p>{advice.advice}</p>
           </>
         )}
       </div>
