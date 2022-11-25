@@ -40,9 +40,7 @@ const Advice = () => {
 
   return (
     <div className="relative">
-      {error && (
-        <div>{`There is a problem fetching the post data - ${error}`}</div>
-      )}
+      {error && <p>{`There is a problem fetching the post data - ${error}`}</p>}
       <div>
         {loading ? (
           <span className="flex h-20 items-center justify-center text-center">
@@ -50,7 +48,10 @@ const Advice = () => {
           </span>
         ) : (
           <>
-            <h1 className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary">
+            <h1
+              role="banner"
+              className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary"
+            >
               Advice #{advice.id}
             </h1>
             <p>{advice.advice}</p>
@@ -68,6 +69,7 @@ const Advice = () => {
         className={`absolute left-0 right-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-dark-blue transition duration-300
 hover:shadow-[0px_0px_40px_10px_rgba(82,255,169,0.55)]`}
         onClick={getAdviceHandler}
+        aria-label="get random advice"
       >
         <svg
           className={`fill-dark-gray-blue ${loading ? "animate-spin" : ""}`}
@@ -75,7 +77,6 @@ hover:shadow-[0px_0px_40px_10px_rgba(82,255,169,0.55)]`}
           height="24"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
-          aria-label="get random advice"
         >
           <path d="M20 0H4a4.005 4.005 0 0 0-4 4v16a4.005 4.005 0 0 0 4 4h16a4.005 4.005 0 0 0 4-4V4a4.005 4.005 0 0 0-4-4ZM7.5 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" />
         </svg>
