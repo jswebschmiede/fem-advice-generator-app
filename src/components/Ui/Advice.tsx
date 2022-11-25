@@ -1,16 +1,58 @@
-import IconDice from "../../assets/icon-dice.svg";
+import { useEffect, useState } from "react";
+import fetchItems from "../../utils/fetch";
+export interface Advice {
+  id: number;
+  advice: string;
+}
 
 const Advice = () => {
+  const [advice, setAdvice] = useState<Advice>({
+    id: 0,
+    advice: "",
+  });
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
+  const api: string = "https://api.adviceslip.com/advice";
+
+  const getAdviceHandler = () => {
+    setLoading(true);
+
+    fetchItems(api)
+      .then((result) => {
+        setAdvice(result.slip);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message || err);
+      });
+  };
+
+  useEffect(() => {
+    fetchItems(api)
+      .then((result) => {
+        setAdvice(result.slip);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message || err);
+      });
+  }, [fetchItems]);
+
   return (
     <div className="relative">
+      {error && (
+        <div>{`There is a problem fetching the post data - ${error}`}</div>
+      )}
       <div>
         <h1 className="pb-8 text-xs uppercase tracking-[.15rem] text-secondary">
-          Advice #
+          Advice #{advice.id}
         </h1>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua.
+          {loading ? (
+            <span className="animate-bounce">loading...</span>
+          ) : (
+            advice.advice
+          )}
         </p>
       </div>
       <div className="relative py-11" aria-hidden="true">
@@ -21,11 +63,12 @@ const Advice = () => {
         </div>
       </div>
       <button
-        className="absolute left-0 right-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-dark-blue transition duration-300
-hover:shadow-[0px_0px_40px_10px_rgba(82,255,169,0.55)]"
+        className={`absolute left-0 right-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-dark-blue transition duration-300
+hover:shadow-[0px_0px_40px_10px_rgba(82,255,169,0.55)]`}
+        onClick={getAdviceHandler}
       >
         <svg
-          className="fill-dark-gray-blue"
+          className={`fill-dark-gray-blue ${loading ? "animate-spin" : ""}`}
           width="24"
           height="24"
           xmlns="http://www.w3.org/2000/svg"
